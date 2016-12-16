@@ -38,7 +38,29 @@ a {
 
 .contentWrapper{
 	width:90%;
+	margin: auto;
 }
+
+
+.topicSearch{
+	margin-top:40px;
+	margin-left:40px;
+}
+.input-group{
+ 	width:75%;
+ 	float: left;
+}
+.sendButton{
+	width:15%;
+ 	height:40px;
+	float:left;
+}
+
+
+.results{
+	margin-top:50px;
+}
+
 
 .contentPiece{
 	padding:30px;
@@ -59,6 +81,12 @@ a {
 .show-div{
 	opacity:1;
 	transition: all ease 1s;
+}
+
+.feelingIcon{
+	width:30px;
+	height:auto;
+	margin-right:20px;
 }
 
 .oddFeeling{
