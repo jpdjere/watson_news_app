@@ -7,6 +7,7 @@ app.controller('myController', function($scope, $http, $sce){
 
 	$scope.runRequest = function(){
 
+		$("#loader").css("display","block");
 		$("#loader").removeClass("hidden-div");
 		$("#loader").addClass("show-div");
 		$(".articleContainer").removeClass("show-div");
