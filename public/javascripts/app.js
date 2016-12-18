@@ -27,6 +27,7 @@ app.controller('myController', function($scope, $http, $sce){
 			
 			$("#loader").removeClass("show-div");
 			$("#loader").addClass("hidden-div");
+			$("#loader").css("display","none");
 			$(".articleContainer").removeClass("hidden-div");
 			$(".articleContainer").addClass("show-div");
 			$(".watsonAnalysis").removeClass("hidden-div");
