@@ -108,6 +108,10 @@ a {
     text-decoration: underline;
 }
 
+.watsonSectionTitle{
+    font-size:20px;
+}
+
 .contentPiece{
     padding: 20px 60px 0px 60px;
 }
@@ -143,4 +147,89 @@ a {
 }
 .evenFeeling{
 	background-color: red;
+}
+
+@media ( max-width: 600px ) {
+
+    .header{
+        box-shadow: none;
+    }
+
+    .logo{
+        width: 150px;
+        margin: 0 auto;
+        float:none;
+        margin-left: 130px;
+    }
+
+    .title{
+        font-size: 60px;
+        font-family: 'Enriqueta', serif;
+        float: left;
+        margin-left: 75px;        
+    }
+
+    .topicSearch{
+        width: 89%;
+        margin: auto;
+        margin-top: 260px;
+        height: 1px;
+    }
+
+
+    
+    .input-group-addon:first-child{
+        display:none;
+    }
+    .form-control:last-child{
+        height: 80px !important;
+        font-size: 20px;
+    }
+    .sendButton{
+        height:80px !important;
+        font-size: 20px;
+    }
+
+    .loader{
+        width:95%;
+    }
+
+
+    .results{
+            margin-top: 125px;
+    }
+
+    .article{
+        box-shadow: none;
+    }
+
+    .newsTitle{
+        font-size:35px !important;
+    }
+
+    .newsPar{
+        font-size:24px !important;
+    }    
+    .newsDate{
+        font-size:20px !important;
+    }
+
+    .watsonTitle h3{
+        font-size:30px !important;
+    }
+
+    .contentPiece{
+        font-size:20px !important;
+    }
+
+
+    .watsonSectionTitle{
+        margin-top:30px;
+        font-size:25px;
+    }
+
+/*    .watsonAnalysis .row .contentPiece:nth-child(2){
+        display:none;
+    }*/
+
 }

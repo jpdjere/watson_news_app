@@ -65,25 +65,26 @@
 
 				        	<div class="contentPiece col-xs-10 col-md-4">
 							        <p class="watsonSectionTitle"><b>Entities Analyzer</b></p>
-							        <table>
-							        	<tr ng-repeat="ent in apiResponse.alchemy.entities">
-							        		<td><b>{{ent.text}}</b></td>
-							        		<td>{{ent.type}}</td>
-							        		<td>{{ent.relevance}}</td>
-							        	</tr>
-							        </table>
+							        <!-- <table> -->
+							        	<div ng-repeat="ent in apiResponse.alchemy.entities">
+							        		<p><b>{{ent.text}}</b> - 
+							        		<span>{{ent.type}}</span> - 
+							        		<span>Relevance: {{ent.relevance}}</span>
+							        		</p>
+							        	</div>
+							        <!-- </table> -->
     
 				        	</div>
 
 				        	<div class="contentPiece col-xs-10 col-md-4">
-							        <p class="watsonSectionTitle"><b>Texonomy Analyzer</b></p>
-							        <table>
-							        	<tr ng-repeat="tax in apiResponse.alchemy.taxonomy">
-							        		<td><b>{{tax.label}}</b></td>
-							        		<td>{{tax.score}}</td>
-							        		<td>{{tax.confident}}</td>
-							        	</tr>
-							        </table>  
+							        <p class="watsonSectionTitle"><b>Taxonomy Analyzer</b></p>
+							        <!-- <table> -->
+							        	<div ng-repeat="tax in apiResponse.alchemy.taxonomy">
+							        		<p><b>{{tax.label}}</b></p>
+							        		<p>Score: {{tax.score}}</p>
+							        		<p>Confident: {{tax.confident}}</p>
+							        	</div>
+							        <!-- </table>   -->
 				        	</div>
 			        	</div>
 		        	</div>

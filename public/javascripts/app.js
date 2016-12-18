@@ -2,7 +2,7 @@ var app = angular.module('angularjsNodejsTutorial', []);
 
 app.controller('myController', function($scope, $http, $sce){
 
-	$scope.nytRequest = 'Donald Trump';
+	$scope.nytRequest = 'Barack Obama';
 	$scope.apiResponse = [];
 
 	$scope.runRequest = function(){
