@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html >
+	<meta name="viewport" content="width=device-width">
+
     <head>
         <title>Integrating AngularJS with NodeJS</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
@@ -43,7 +45,7 @@
 	        			<div class="article col-xs-12">
 			  					<p class="newsTitle"><b>{{apiResponse.news.response.docs[0].headline.main}}</b></p>
 						        <p class="newsPar">{{apiResponse.news.response.docs[0].lead_paragraph}}</p>
-						        <p><i>Date published:</i> {{apiResponse.news.response.docs[0].pub_date.substring(0,10)}}</p>
+						        <p class="newsDate"><i>Date published:</i> {{apiResponse.news.response.docs[0].pub_date.substring(0,10)}}</p>
 						</div>
 					</div>
 				
@@ -55,14 +57,14 @@
 				        	<div class="contentPiece col-xs-10 col-md-3">
 							        
 							        <!-- <audio ng-src="{{data.file}}" controls></audio> -->
-							        <p style="font-size:20px"><b>Tone Analyzer</b></p>
+							        <p class="watsonSectionTitle"><b>Tone Analyzer</b></p>
 							        <p ng-repeat="feeling in apiResponse.ana.document_tone.tone_categories[0].tones">
 							        	<img class="feelingIcon" ng-src="images/{{feeling.tone_name.toLowerCase()}}.png"><i>{{feeling.tone_name}}</i>: {{feeling.score}}
 							        </p>      	
 				        	</div>
 
 				        	<div class="contentPiece col-xs-10 col-md-4">
-							        <p style="font-size:20px"><b>Entities Analyzer</b></p>
+							        <p class="watsonSectionTitle"><b>Entities Analyzer</b></p>
 							        <table>
 							        	<tr ng-repeat="ent in apiResponse.alchemy.entities">
 							        		<td><b>{{ent.text}}</b></td>
@@ -74,7 +76,7 @@
 				        	</div>
 
 				        	<div class="contentPiece col-xs-10 col-md-4">
-							        <p style="font-size:20px"><b>Texonomy Analyzer</b></p>
+							        <p class="watsonSectionTitle"><b>Texonomy Analyzer</b></p>
 							        <table>
 							        	<tr ng-repeat="tax in apiResponse.alchemy.taxonomy">
 							        		<td><b>{{tax.label}}</b></td>
