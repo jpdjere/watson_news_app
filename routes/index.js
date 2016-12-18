@@ -43,7 +43,7 @@ router.get('/nyt', function(req,res){
 	    'api-key': "aae6d357d15b419cb6955e00236d58df",
 	    'q': req.query.city,
 	    'sort': "newest",
-	    'fl': "headline,lead_paragraph",
+	    'fl': "headline,lead_paragraph,pub_date",
 	    'page': 0
 	  },
 	}, function(err, response, body) {
@@ -70,7 +70,7 @@ router.get('/nyt', function(req,res){
 		var alchemy_params = {
 		  extract: 'entities,taxonomy',
 		  sentiment: 1,
-		  maxRetrieve: 1,
+		  maxRetrieve: 5,
 		  text: lead_paragraph
 		};
 		

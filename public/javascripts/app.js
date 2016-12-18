@@ -2,15 +2,17 @@ var app = angular.module('angularjsNodejsTutorial', []);
 
 app.controller('myController', function($scope, $http, $sce){
 
-	$scope.nytRequest = 'Diego Maradona';
+	$scope.nytRequest = 'Donald Trump';
 	$scope.apiResponse = [];
 
 	$scope.runRequest = function(){
 
 		$("#loader").removeClass("hidden-div");
 		$("#loader").addClass("show-div");
-		$("#answerContent").removeClass("show-div");
-		$("#answerContent").addClass("hidden-div");
+		$(".articleContainer").removeClass("show-div");
+		$(".articleContainer").addClass("hidden-div");
+		$(".watsonAnalysis").removeClass("show-div");
+		$(".watsonAnalysis").addClass("hidden-div");
 
 		var request = $http({
 							    url: '/nyt', 
@@ -18,21 +20,23 @@ app.controller('myController', function($scope, $http, $sce){
 							    params: {city: $scope.nytRequest}
 							 });
 
-		request.success(function(data){
+		request.then(function(data){
 			console.log(data);
-			$scope.apiResponse = data;
+
+			$scope.apiResponse = data.data;
 			
 			$("#loader").removeClass("show-div");
 			$("#loader").addClass("hidden-div");
-			$("#answerContent").removeClass("hidden-div");
-			$("#answerContent").addClass("show-div");
+			$(".articleContainer").removeClass("hidden-div");
+			$(".articleContainer").addClass("show-div");
+			$(".watsonAnalysis").removeClass("hidden-div");
+			$(".watsonAnalysis").addClass("show-div");
 
-		})
-
-		request.error(function(data){
+		},function(data){//Second function handles error
 			console.log('Error: ' + data);
 			alert("No data");
 		})
+
 
 	}
 
