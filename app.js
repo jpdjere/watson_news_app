@@ -10,6 +10,7 @@ var request = require('request');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+
 var app = express();
 
 // view engine setup
@@ -19,13 +20,42 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+
+
+// BASE SETUP
+// =============================================================================
+var mongoose = require('mongoose');
+
+// connect to our database
+// you can use your own MongoDB installation at: mongodb://127.0.0.1/databasename
+//mongoose.connect('mongodb://username:password@kahana.mongohq.com:10073/node-api');
+
+mongoose.connect('mongodb://localhost/watson_app');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log("Connected");
+});
+
+//ROUTES FOR OUR API
+var router = require('./db/api') 
+
+//Lo asigno a /api
+app.use('/api',router);
+
+
+
+
+
+// ERROR HANDLERS (van al final, dps de todas las declaraciones de app.use())
+// =============================================================================
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -33,8 +63,6 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
-// error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
@@ -44,5 +72,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+
 
 module.exports = app;

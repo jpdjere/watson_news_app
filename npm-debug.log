@@ -26,7 +26,7 @@
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
 15 verbose pkgid watson-news-app@0.0.0
 16 verbose cwd /home/jpdjere/Dropbox/Programacion/Node.js/watson_news_app
-17 error Linux 4.4.0-53-generic
+17 error Linux 4.4.0-57-generic
 18 error argv "/home/jpdjere/.nvm/versions/node/v7.2.1/bin/node" "/home/jpdjere/.nvm/versions/node/v7.2.1/bin/npm" "start"
 19 error node v7.2.1
 20 error npm  v3.10.10

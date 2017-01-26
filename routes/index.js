@@ -9,8 +9,8 @@ var app = express();
 var watson = require('watson-developer-cloud');
 
 var tone_analyzer = watson.tone_analyzer({
-  username: '67b5de56-a424-466c-bd3b-efd8ef090390',
-  password: 'IbCXdTfcYiBs',
+  username: "82aa7f03-85a4-4890-b74b-7dc520a446e9",
+  password: "WkZltktIc06v",
   version: 'v3',
   version_date: '2016-05-19'
 });
@@ -23,7 +23,7 @@ var tone_analyzer = watson.tone_analyzer({
 // });
 
 var alchemy_language = watson.alchemy_language({
-  api_key: '4c71c9de0dd6d2f26cee8af5f66e79f426515401'
+  api_key: '7d63186b6937b47b3db40f4ac0a1725bf162aadb'
 });
 
 
